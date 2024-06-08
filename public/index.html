@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Care</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="container">
+    <!-- INCLUDE METADATA -->
+
+    <header class="content header">
+      <img src="img/TestLogo.svg" alt="Test Logo" class="header__img" />
+
+      <div class="bold header__nav">
+        <a href="#" class="header__nav--overview">
+          <img
+            src="img/homeIcon.svg"
+            alt="overview icon"
+            class="header__nav--img"
+          />Overview
+        </a>
+        <a href="#" class="active header__nav--participants">
+          <img
+            src="img/participantIcon.svg"
+            alt="participant icon"
+            class="header__nav--img"
+          />Participants
+        </a>
+        <a href="#" class="header__nav--schedule">
+          <img
+            src="img/scheduleIcon.svg"
+            alt="schecule icon"
+            class="header__nav--img"
+          />Schedule
+        </a>
+        <a href="#" class="header__nav--message">
+          <img
+            src="img/messageIcon.svg"
+            alt="message icon"
+            class="header__nav--img"
+          />Message
+        </a>
+        <a href="#" class="header__nav--transaction">
+          <img
+            src="img/transactionIcon.svg"
+            alt="transaction icon"
+            class="header__nav--img"
+          />Transactions
+        </a>
+      </div>
+
+      <div class="header__user">
+        <img
+          src="img/doctor.png"
+          alt="female doctor"
+          class="header__user--img"
+        />
+        <div class="header__user--detail">
+          <div class="bold header__user--name">Dr. Jose Simmons</div>
+          <div class="header__user--title">General Practitioner</div>
+        </div>
+        <img
+          src="img/settingsIcon.png"
+          alt="settings Icon"
+          class="icon--small header__user--icon"
+        />
+        <img
+          src="img/moreIcon.svg"
+          alt="More Icon"
+          class="header__user--more"
+        />
+      </div>
+    </header>
+    <!-- PATIENTS -->
+    <div class="content patients">
+      <div class="patients__header">
+        <h3 class="font--lg">Patients</h3>
+        <a href="#" class="link"
+          ><img class="icon--small" src="img/searchIcon.svg" alt="Search Icon"
+        /></a>
+      </div>
+      <a href="#" class="link active--2 patients__list">
+        <img
+          src="img/patient.png"
+          alt="young woman"
+          class="icon--medium patients__list--img"
+        />
+        <div class="patients__list--detail font--reg">
+          <p class="patients__list--name">Jessica Taylor</p>
+          <div>
+            <p class="patients__list--gender">Female</p>
+            <p class="patients__list--age">28</p>
+          </div>
+        </div>
+        <img
+          src="img/more_horizontal (1).svg"
+          alt="More Icon"
+          class="icon--small patients__list--icon"
+        />
+      </a>
+    </div>
+
+    <div class="content history">
+      <h3 class="font--lg">Diagnosis History</h3>
+      <div>
+        <!-- below will be a grid container -->
+        <div class="history__BP">
+          <div class="">
+            <div class="flex space-between">
+              <h5 class="font--md">Blood Pressure</h5>
+              <p class="font--reg">
+                Last <span class="months">0</span> months
+                <img
+                  src="img/expand_more_icon.svg"
+                  class="months-dropdown icon--xsmall"
+                  alt="expand more icon"
+                />
+              </p>
+            </div>
+            <div class="history__BP--chart">the chart</div>
+          </div>
+          <div class="history__BP--chartfig">
+            <div>
+              <div class="flex">
+                <span class="colorKey colorSys"></span>
+                <p class="bold font--reg">Systolic</p>
+              </div>
+              <p class="systolicFig figPadding font--lg bold">1</p>
+              <div class="flex">
+                <img
+                  src="img/ArrowUp.svg"
+                  class="icon--xsmall history__BP--chartfigIcon"
+                  alt="Arrow up Icon"
+                />
+                <p class="sysStatus">Higher...</p>
+              </div>
+            </div>
+            <div>
+              <div class="flex">
+                <span class="colorKey colorDia"></span>
+                <p class="bold font--reg">Diastolic</p>
+              </div>
+              <p class="diastolicFig figPadding font--lg bold">1</p>
+              <div class="flex">
+                <img
+                  src="img/ArrowDown.png"
+                  class="icon--xsmall history__BP--chartfigIcon"
+                  alt="Arrow down Icon"
+                />
+                <p class="sysStatus">Lower...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="history__details">
+          <div class="respRate">
+            <img
+              src="img/respiratory rate.png"
+              class="icon--lg"
+              alt="lungs icon"
+            />
+            <p class="font--reg">Respiratory Rate</p>
+            <p class="font--xlg bold respRate__fig">20 <span>bpm</span></p>
+            <p class="respRate__levels history__details--txt font--reg">N</p>
+          </div>
+          <div class="temp">
+            <img
+              src="img/temperature.png"
+              class="icon--lg"
+              alt="Temprature Icon"
+            />
+            <p class="font--reg">Temprature</p>
+            <p class="font--xlg bold tempRate__fig">20 <span>°F</span></p>
+            <p class="temp__levels history__details--txt font--reg">N</p>
+          </div>
+          <div class="heartRate">
+            <img src="img/HeartBPM.png" class="icon--lg" alt="Heart Icon" />
+            <p class="font--reg">Heart Rate</p>
+            <p class="font--xlg bold heartRate__fig">20 <span>bpm</span></p>
+            <div class="history__details--txt">
+              <img
+                src="img/ArrowDown.png"
+                class="icon--xsmall"
+                alt="Arrow down Icon"
+              />
+              <p class="heart__levels font--reg">N</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  DIAGNOSIS LIST-->
+    <div class="content diagnosisList">
+      <h3 class="font--lg">Diagnosis List</h3>
+
+      <div class="font--reg">
+        <div class="diagnosisList__table--head highlight">
+          <p class="bold">Problem/Diagnosis</p>
+          <p class="bold">Description</p>
+          <p class="bold">Status</p>
+        </div>
+
+        <div class="font--reg diagnosisList__table">
+          <p class="problem">Hypertension</p>
+          <p class="description">Chronic high blood pressure</p>
+          <p class="status">Under Observation</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PATIENT PROFILE -->
+    <div class="content patientPro">
+      <img class="patientPro__img" src="img/patient2.png" alt="young woman" />
+      <h3 class="patientPro__name font--lg center">Jane Doe</h3>
+
+      <div class="patientPro__details">
+        <img src="img/BirthIcon.png" alt="calendar icon" class="icon--medium" />
+        <div>
+          <p class="">Date of Birth</p>
+          <p class="bold patientPro__dob">August 23, 1996</p>
+        </div>
+      </div>
+
+      <div class="patientPro__details">
+        <img src="img/FemaleIcon.png" alt="female icon" class="icon--medium" />
+        <div>
+          <p class="">Gender</p>
+          <p class="bold patientPro__gender">Female</p>
+        </div>
+      </div>
+
+      <div class="patientPro__details">
+        <img src="img/PhoneIcon.png" alt="phone icon" class="icon--medium" />
+        <div>
+          <p class="">Contact Info.</p>
+          <p class="bold patientPro__tel">(415)555-123</p>
+        </div>
+      </div>
+      <div class="patientPro__details">
+        <img src="img/PhoneIcon.png" alt="phone icon" class="icon--medium" />
+        <div>
+          <p class="">Emergency Contacts</p>
+          <p class="bold patientPro__emerg">(415)555-123</p>
+        </div>
+      </div>
+      <div class="patientPro__details">
+        <img
+          src="img/InsuranceIcon.png"
+          alt="Insurance icon"
+          class="icon--medium"
+        />
+        <div>
+          <p class="">Insurance Provider</p>
+          <p class="bold patientPro__insur">Sunrise Health Assurance</p>
+        </div>
+      </div>
+
+      <a href="#" class="active link font--reg">Show All Information</a>
+    </div>
+
+    <div class="content labResults">
+      <h3 class="font--lg">Lab Results</h3>
+
+      <div class="labResults__content highlight">
+        <p class="font--reg labResults__content--item">Blood Tests</p>
+        <img
+          src="img/downloadIcon.svg"
+          class="icon--small"
+          alt="Download Icon"
+        />
+      </div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
