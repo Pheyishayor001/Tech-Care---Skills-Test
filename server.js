@@ -1,17 +1,19 @@
+// run START in the terminal to start the load the API on the server
+
 import express from "express";
 import dotenv from "dotenv";
 import axios from "axios";
 import cors from "cors"; // this middleware is to prevent the browser from eforcing security restrictions (Same Origin Policy)
 
-dotenv.config(); //loads encrypted log in credentials from the .env file.
+dotenv.config(); //loads encrypted log-in credentials from the .env file.
 
 const app = express();
 const port = process.env.PORT || 3000; //port to load the node.js
 
 app.use(cors()); //this enables CORS  for all routes.
 
+// Loading the API on the Server first.
 app.get("/api/data", async (_, res) => {
-  console.log("hello");
   try {
     const response = await axios.get(process.env.API_KEY, {
       auth: {
@@ -27,5 +29,5 @@ app.get("/api/data", async (_, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}/api/data`);
 });

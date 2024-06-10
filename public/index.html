@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech Care</title>
 
+    <!-- SEO Meta Tags -->
+    <meta
+      name="Tech Care"
+      content="Tech Care - Your trusted health companion. Management of patient data, health test, diagnosis history."
+    />
+    <meta
+      name="keywords"
+      content="health, tech care, patient management, diagnosis, medical records"
+    />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
@@ -13,8 +23,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="container">
-    <!-- INCLUDE METADATA -->
-
     <header class="content header">
       <img src="img/TestLogo.svg" alt="Test Logo" class="header__img" />
 
@@ -86,25 +94,28 @@
           ><img class="icon--small" src="img/searchIcon.svg" alt="Search Icon"
         /></a>
       </div>
-      <a href="#" class="link active--2 patients__list">
-        <img
-          src="img/patient.png"
-          alt="young woman"
-          class="icon--medium patients__list--img"
-        />
-        <div class="patients__list--detail font--reg">
-          <p class="patients__list--name">Jessica Taylor</p>
-          <div>
-            <p class="patients__list--gender">Female</p>
-            <p class="patients__list--age">28</p>
+
+      <div class="patients__list--container addScrollBar">
+        <a href="#" class="link active--2 patients__list">
+          <img
+            src="img/patient.png"
+            alt="young woman"
+            class="icon--medium patients__list--img"
+          />
+          <div class="patients__list--detail font--reg">
+            <p class="patients__list--name">Jane Doe</p>
+            <div>
+              <p class="patients__list--gender">F</p>
+              <p class="patients__list--age">1</p>
+            </div>
           </div>
-        </div>
-        <img
-          src="img/more_horizontal (1).svg"
-          alt="More Icon"
-          class="icon--small patients__list--icon"
-        />
-      </a>
+          <img
+            src="img/more_horizontal (1).svg"
+            alt="More Icon"
+            class="icon--small patients__list--icon"
+          />
+        </a>
+      </div>
     </div>
 
     <div class="content history">
@@ -124,7 +135,9 @@
                 />
               </p>
             </div>
-            <div class="history__BP--chart">the chart</div>
+            <div class="history__BP--chart">
+              <canvas id="myChart"></canvas>
+            </div>
           </div>
           <div class="history__BP--chartfig">
             <div>
@@ -154,7 +167,7 @@
                   class="icon--xsmall history__BP--chartfigIcon"
                   alt="Arrow down Icon"
                 />
-                <p class="sysStatus">Lower...</p>
+                <p class="diaStatus">Lower...</p>
               </div>
             </div>
           </div>
@@ -168,7 +181,9 @@
               alt="lungs icon"
             />
             <p class="font--reg">Respiratory Rate</p>
-            <p class="font--xlg bold respRate__fig">20 <span>bpm</span></p>
+            <p class="font--xlg bold">
+              <span class="respRate__fig">0</span> bpm
+            </p>
             <p class="respRate__levels history__details--txt font--reg">N</p>
           </div>
           <div class="temp">
@@ -178,13 +193,17 @@
               alt="Temprature Icon"
             />
             <p class="font--reg">Temprature</p>
-            <p class="font--xlg bold tempRate__fig">20 <span>°F</span></p>
+            <p class="font--xlg bold">
+              <span class="tempRate__fig">0</span> °F
+            </p>
             <p class="temp__levels history__details--txt font--reg">N</p>
           </div>
           <div class="heartRate">
             <img src="img/HeartBPM.png" class="icon--lg" alt="Heart Icon" />
             <p class="font--reg">Heart Rate</p>
-            <p class="font--xlg bold heartRate__fig">20 <span>bpm</span></p>
+            <p class="font--xlg bold">
+              <span class="heartRate__fig">0</span> bpm
+            </p>
             <div class="history__details--txt">
               <img
                 src="img/ArrowDown.png"
@@ -209,7 +228,7 @@
           <p class="bold">Status</p>
         </div>
 
-        <div class="font--reg diagnosisList__table">
+        <div class="font--reg diagnosisList__table addScrollBar">
           <p class="problem">Hypertension</p>
           <p class="description">Chronic high blood pressure</p>
           <p class="status">Under Observation</p>
@@ -219,14 +238,14 @@
 
     <!-- PATIENT PROFILE -->
     <div class="content patientPro">
-      <img class="patientPro__img" src="img/patient2.png" alt="young woman" />
+      <img class="patientPro__img" src="" alt="young woman" />
       <h3 class="patientPro__name font--lg center">Jane Doe</h3>
 
       <div class="patientPro__details">
         <img src="img/BirthIcon.png" alt="calendar icon" class="icon--medium" />
         <div>
           <p class="">Date of Birth</p>
-          <p class="bold patientPro__dob">August 23, 1996</p>
+          <p class="bold patientPro__dob">x 1, 000</p>
         </div>
       </div>
 
@@ -267,20 +286,23 @@
       <a href="#" class="active link font--reg">Show All Information</a>
     </div>
 
-    <div class="content labResults">
+    <div class="content labResults addScrollBar">
       <h3 class="font--lg">Lab Results</h3>
 
-      <div class="labResults__content highlight">
-        <p class="font--reg labResults__content--item">Blood Tests</p>
-        <img
-          src="img/downloadIcon.svg"
-          class="icon--small"
-          alt="Download Icon"
-        />
+      <div class="labResults__content">
+        <div class="flex space-between">
+          <p class="font--reg labResults__content--item">Blood Tests</p>
+          <img
+            src="img/downloadIcon.svg"
+            class="icon--small"
+            alt="Download Icon"
+          />
+        </div>
       </div>
     </div>
 
-    <!-- <script src="script.js"></script> -->
+    <script src="../node_modules/chart.js/dist/chart.umd.js"></script>
+    <script type="module" src="modules/myChart.js"></script>
     <script type="module" src="script.js"></script>
   </body>
 </html>
